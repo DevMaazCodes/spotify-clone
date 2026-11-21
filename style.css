@@ -1,3 +1,6 @@
-.main{
+.flex{
     display: flex;
+}
+main .main{
+    gap:100px;
 }
