@@ -25,6 +25,10 @@ background-color: black;
 .home{
     padding: 10px;
 }
+.library{
+    min-height: 80vh;
+    position: relative;
+}
 .library .heading img{
  width: 17px;
  filter: invert(0.5);
@@ -32,5 +36,23 @@ background-color: black;
 .library .heading{
     justify-content: space-between;
 }
+.library .footer{
+    position:absolute;
+    bottom: 10px;
+}
+.library .footer ul{
+    gap:15px;
+    flex-wrap: wrap;
+    width: 80%;
+}
+.library .footer ul li{
+    list-style: none;
+}
+.library .footer ul li a{
+    text-decoration: none;
+    color: rgb(179,179,179);
+    font-size:12px;
+}
+ 
 
 
