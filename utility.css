@@ -5,11 +5,24 @@
     display: flex;
 }
 .invert{
-    filter: invert();
+    filter: invert(1);
 }
 .justify-center{
     justify-content: center;
 }
 .items-center{
     align-items: center;
+}
+.border{
+    border: 2px solid white;
+    margin:10px;
+}
+.rounded{
+    border-radius: 6px;
+}
+.m1{
+    margin: 5px;
+}
+.p1{
+    padding: 10px;
 }
