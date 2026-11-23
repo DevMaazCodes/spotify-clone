@@ -16,6 +16,7 @@ body {
 
 .right {
     width: 75vw;
+    position: relative;
 }
 
 .home ul li {
@@ -68,10 +69,11 @@ body {
 .right .header {
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(74, 74, 74);
+    background-color: #1f1f1f;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
-    padding: 10px
+    padding: 10px;
+    height: 50px;
 }
 
 .right .header .buttons button {
@@ -136,7 +138,7 @@ body {
 }
 
 .signup-btn{
-    background-color: rgb(74, 74, 74);
+    background-color:#1f1f1f;
    border: none;
    color:white;
    font-size: 14px;
@@ -161,5 +163,15 @@ body {
 .login-btn:hover{
     font-weight:bolder;
     font-size: 15px;
-    
 }
+.right .player{
+    position:absolute;
+    bottom: 0;
+    background-color:#1ed760;
+    width: 100%;
+    padding: 10px;
+}
+.player .playbuttons{
+    gap: 12px;
+}
+
