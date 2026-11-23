@@ -1,96 +1,134 @@
-*{
-    
+* {
+
     margin: 0;
     padding: 0;
 }
- body{
-background-color: black;
-    color: white;
- }
 
-.left{
+body {
+    background-color: black;
+    color: white;
+}
+
+.left {
     width: 25vw;
     border-radius: 6px;
 }
-.right{
+
+.right {
     width: 75vw;
 }
 
-.home ul li{
+.home ul li {
     display: flex;
     gap: 10px;
     width: 15px;
     list-style: none;
     padding-top: 12px;
 }
-.home{
+
+.home {
     padding: 10px;
 }
-.library{
+
+.library {
     min-height: 80vh;
     position: relative;
 }
-.library .heading img{
- width: 17px;
- filter: invert(0.5);
+
+.library .heading img {
+    width: 17px;
+    filter: invert(0.5);
 }
-.library .heading{
+
+.library .heading {
     justify-content: space-between;
 }
-.library .footer{
-    position:absolute;
+
+.library .footer {
+    position: absolute;
     bottom: 10px;
 }
-.library .footer ul{
-    gap:15px;
+
+.library .footer ul {
+    gap: 15px;
     flex-wrap: wrap;
     width: 80%;
 }
-.library .footer ul li{
+
+.library .footer ul li {
     list-style: none;
 }
-.library .footer ul li a{
+
+.library .footer ul li a {
     text-decoration: none;
-    color: rgb(179,179,179);
-    font-size:12px;
+    color: rgb(179, 179, 179);
+    font-size: 12px;
 }
-.right .header{
+
+.right .header {
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(74, 74 ,74);
+    background-color: rgb(74, 74, 74);
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
-    padding:10px
+    padding: 10px
 }
-.right .header .buttons button{
-  margin-left: 7px;
+
+.right .header .buttons button {
+    margin-left: 7px;
 }
-.spotify-playlists{
+
+.spotify-playlists {
     padding: 16px;
 }
-.card-container{
+
+.card-container {
     margin: 10px;
     gap: 20px;
     flex-wrap: wrap;
 
 }
-.spotify-playlists .card{
+
+.spotify-playlists .card {
     width: 150px;
     padding: 10px;
     margin-top: 10px;
-    border-radius:5px;
+    border-radius: 5px;
     background-color: #252525;
+    position: relative;
 }
-.spotify-playlists .card img{
+
+.spotify-playlists .card img {
     width: 100%;
     object-fit: contain;
 }
-.spotify-playlists .card p{
+
+.spotify-playlists .card p {
     text-overflow: ellipsis;
 }
-.card>*{
+
+.card>* {
     padding-top: 10px;
 }
 
+.playbtn {
+    width: 50px;
+    height: 50px;
+    background-color: #1ed760;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 150px;
+    right:12px;
+    transition: all 0.5s ease-in;
+    opacity: 0;
+}
 
-
+.card:hover{
+    .playbtn{
+        top: 125px;
+        opacity: 1;
+    }
+}
