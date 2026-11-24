@@ -55,7 +55,7 @@ body {
 .library .footer ul {
     gap: 15px;
     flex-wrap: wrap;
-    width: 80%;
+    width: 100%;
 }
 
 .library .footer ul li {
@@ -65,7 +65,7 @@ body {
 .library .footer ul li a {
     text-decoration: none;
     color: rgb(179, 179, 179);
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .right .header {
