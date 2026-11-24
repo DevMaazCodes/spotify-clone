@@ -171,9 +171,33 @@ body {
     bottom: 0;
     background-color:#1ed760;
     width: 100%;
-    padding: 10px;
+    padding: 10px 0px;
 }
 .player .playbuttons{
     gap: 12px;
+}
+.songList ul{
+    list-style: none;
+}
+.songList ul li{
+    list-style: none;
+    border: 1px solid white;
+    border-radius:5px;
+    gap: 23px;
+    margin-top: 10px;
+    padding: 12px 6px;
+    font-size: 14px;
+    justify-content: space-between;
+    align-items: center;
+}
+.playNow{
+    gap: 12px;
+}
+
+.playNow img{
+    width: 20px;
+}
+.songList .info{
+    width: 270px;
 }
 
