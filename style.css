@@ -168,7 +168,7 @@ body {
 }
 .right .player{
     position:fixed;
-    bottom: 0;
+    bottom: 3px;
     background-color:#1ed760;
     width: 80%;
     padding: 10px 0px;
@@ -205,4 +205,21 @@ body {
 .songList .info{
     width: 220px;
 }
-
+.seekbar{
+    height: 2px;
+    width: 80%;
+    border:1px #1f1f1f solid;
+    position: absolute;
+    bottom: 3px;
+    border-radius: 7px;
+}
+.seekbar .circle{
+    height: 10px;
+    width: 10px;
+    border-radius: 99999px;
+    background-color: #1f1f1f;
+    position:relative;
+    bottom:5px;
+    left:0%;
+    transition:left 0.5s ease;
+}
