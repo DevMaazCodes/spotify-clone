@@ -167,14 +167,19 @@ body {
     font-size: 15px;
 }
 .right .player{
-    position:absolute;
+    position:fixed;
     bottom: 0;
     background-color:#1ed760;
-    width: 100%;
+    width: 80%;
     padding: 10px 0px;
 }
 .player .playbuttons{
     gap: 12px;
+}
+.songList{
+    height: 650px;
+    overflow: auto;
+    margin-bottom: 100px;
 }
 .songList ul{
     list-style: none;
@@ -198,6 +203,6 @@ body {
     width: 20px;
 }
 .songList .info{
-    width: 270px;
+    width: 220px;
 }
 
