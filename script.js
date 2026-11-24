@@ -15,5 +15,11 @@ async function getSongs(){
 async function main(){
     let songs=await getSongs()
     console.log(songs)
+    let song=new Audio(songs[0])
+    song.play(songs[0])
+    song.addEventListener("loadeddata",()=>{
+        let duration=song.duration;
+        console.log(duration)
+    })
 }
 main()
