@@ -13,8 +13,8 @@ async function getSongs(){
   return songs
 }
 async function main(){
+    let currentSong;
     let songs=await getSongs()
-    console.log(songs)
     let songUL=document.querySelector(".songList").getElementsByTagName("ul")[0]
     for (const song of songs) {
         song1=song.replaceAll("%20"," ")
@@ -32,6 +32,13 @@ async function main(){
                                 </div>
                             </li>`
     }
+    Array.from(document.querySelector(".songList").getElementsByTagName("li")).forEach(e=>{
+        currentSong=e.getElementsByTagName("div")[0].firstElementChild.innerHTML;
+        e.addEventListener("click",()=>{
+            playMusic(currentSong)
+        })
+        console.log(currentSong)
+    })
     
 }
 main()
