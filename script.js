@@ -20,7 +20,7 @@ const playMusic = (track, pause = false) => {
         play.src = "/assets/pause.svg"
     }
     let songInfo = document.querySelector(".songInfo");
-    songInfo.innerHTML = track.split("-")[0];
+    songInfo.innerHTML = decodeURI(track.split("-")[0]);
 }
 function secondsToMinutesSeconds(totalSeconds) {
     if (typeof totalSeconds !== 'number' || !Number.isFinite(totalSeconds) || totalSeconds < 0) {
@@ -72,6 +72,7 @@ async function main() {
     let songTime = document.querySelector(".songTime");
     currentSong.addEventListener("timeupdate", () => {
         songTime.innerHTML = `${secondsToMinutesSeconds(currentSong.currentTime)}/${secondsToMinutesSeconds(currentSong.duration)}`
+        document.querySelector(".circle").style.left=(currentSong.currentTime*100)/currentSong.duration+"%"
     })
 
 }
