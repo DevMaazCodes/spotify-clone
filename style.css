@@ -194,6 +194,7 @@ body {
     font-size: 14px;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
 }
 .playNow{
     gap: 12px;
@@ -222,4 +223,7 @@ body {
     bottom:5px;
     left:0%;
     transition:left 0.5s ease;
+}
+.playbuttons img{
+    cursor: pointer;
 }

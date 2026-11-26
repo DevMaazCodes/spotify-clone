@@ -1,4 +1,5 @@
 console.log(`Let's start JS`)
+let currentSong=new Audio();
 async function getSongs(){
   let a= await fetch("/songs/");
   let response=await a.text();
@@ -12,18 +13,22 @@ async function getSongs(){
   }
   return songs
 }
+const playMusic=(track)=>{
+    currentSong.src=`/songs/`+track
+    play.src="/assets/pause.svg"
+    currentSong.play();
+}
 async function main(){
-    let currentSong;
     let songs=await getSongs()
     let songUL=document.querySelector(".songList").getElementsByTagName("ul")[0]
     for (const song of songs) {
-        song1=song.replaceAll("%20"," ")
+
         songUL.innerHTML=songUL.innerHTML+`
         
         <li class="flex">
                                 <img class="invert" src="assets/music.svg" alt="music">
                                 <div class="info">
-                                    <div class="songName">${song1.replaceAll("_",", ")}</div>
+                                    <div class="songName">${song.replaceAll("%20"," ")}</div>
                                     <div class="songArtist">Maaz</div>
                                 </div>
                                 <div class="playNow flex justify-center items-center">
@@ -33,11 +38,18 @@ async function main(){
                             </li>`
     }
     Array.from(document.querySelector(".songList").getElementsByTagName("li")).forEach(e=>{
-        currentSong=e.getElementsByTagName("div")[0].firstElementChild.innerHTML;
         e.addEventListener("click",()=>{
-            playMusic(currentSong)
+            playMusic(e.getElementsByTagName("div")[0].firstElementChild.innerHTML)
         })
-        console.log(currentSong)
+    })
+    play.addEventListener("click",()=>{
+        if(currentSong.paused){
+            currentSong.play();
+        }
+        else{
+            currentSong.pause();
+            play.src="/assets/play.svg"
+        }
     })
     
 }
