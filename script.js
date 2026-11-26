@@ -17,6 +17,13 @@ const playMusic=(track)=>{
     currentSong.src=`/songs/`+track
     play.src="/assets/pause.svg"
     currentSong.play();
+    let songInfo=document.querySelector(".songInfo");
+    let songTime=document.querySelector(".songTime");
+    songInfo.innerHTML=track;
+    setInterval(()=>{
+        songTime.innerHTML=currentSong.currentTime
+    },1000)
+    
 }
 async function main(){
     let songs=await getSongs()
@@ -45,6 +52,7 @@ async function main(){
     play.addEventListener("click",()=>{
         if(currentSong.paused){
             currentSong.play();
+            play.src="/assets/pause.svg"
         }
         else{
             currentSong.pause();
