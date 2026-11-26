@@ -210,9 +210,11 @@ body {
     height: 2px;
     width: 80%;
     border:1px #1f1f1f solid;
+    background-color: #1f1f1f;
     position: absolute;
     bottom: 3px;
     border-radius: 7px;
+    cursor: pointer;
 }
 .seekbar .circle{
     height: 10px;

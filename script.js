@@ -23,11 +23,7 @@ const playMusic = (track, pause = false) => {
     songInfo.innerHTML = decodeURI(track.split("-")[0]);
 }
 function secondsToMinutesSeconds(totalSeconds) {
-    if (typeof totalSeconds !== 'number' || !Number.isFinite(totalSeconds) || totalSeconds < 0) {
-        throw new Error("Invalid input: totalSeconds must be a non-negative number.");
-    }
     totalSeconds = Math.floor(totalSeconds);
-
     const minutes = Math.floor(totalSeconds / 60);
     const seconds = totalSeconds % 60;
     const minutesStr = String(minutes).padStart(2, '0');
@@ -73,6 +69,11 @@ async function main() {
     currentSong.addEventListener("timeupdate", () => {
         songTime.innerHTML = `${secondsToMinutesSeconds(currentSong.currentTime)}/${secondsToMinutesSeconds(currentSong.duration)}`
         document.querySelector(".circle").style.left=(currentSong.currentTime*100)/currentSong.duration+"%"
+    })
+    document.querySelector(".seekbar").addEventListener("click",(e)=>{
+        let percent=(e.offsetX/e.target.getBoundingClientRect().width)*100
+        document.querySelector(".circle").style.left=percent+"%"
+        currentSong.currentTime=currentSong.duration*percent/100
     })
 
 }
