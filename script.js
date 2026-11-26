@@ -18,12 +18,19 @@ const playMusic=(track)=>{
     play.src="/assets/pause.svg"
     currentSong.play();
     let songInfo=document.querySelector(".songInfo");
-    let songTime=document.querySelector(".songTime");
-    songInfo.innerHTML=track;
-    setInterval(()=>{
-        songTime.innerHTML=currentSong.currentTime
-    },1000)
-    
+    songInfo.innerHTML=track.split("-")[0];  
+}
+function secondsToMinutesSeconds(totalSeconds) {
+    if (typeof totalSeconds !== 'number' || !Number.isFinite(totalSeconds) || totalSeconds < 0) {
+        throw new Error("Invalid input: totalSeconds must be a non-negative number.");
+    }
+    totalSeconds = Math.floor(totalSeconds);
+
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    const minutesStr = String(minutes).padStart(2, '0');
+    const secondsStr = String(seconds).padStart(2, '0');
+    return `${minutesStr}:${secondsStr}`;
 }
 async function main(){
     let songs=await getSongs()
@@ -58,6 +65,10 @@ async function main(){
             currentSong.pause();
             play.src="/assets/play.svg"
         }
+    })
+    let songTime=document.querySelector(".songTime");
+    currentSong.addEventListener("timeupdate",()=>{
+        songTime.innerHTML= `${secondsToMinutesSeconds(currentSong.currentTime)}:${secondsToMinutesSeconds(currentSong.duration)}`
     })
     
 }
