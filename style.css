@@ -239,7 +239,16 @@ body {
     font-size: 16px;
     font-weight: bolder;
 }
+.nav{
+    gap:8px
+}
+.hamburger{
+    display: none;
+}
 @media screen and (max-width:1730px){
+    .hamburger{
+        display: block;
+    }
     .left{
         position: absolute;
         left:-200%;
@@ -261,3 +270,5 @@ body {
     font-size: 12px;
     padding: 0px 0px;
 }
+}
+
